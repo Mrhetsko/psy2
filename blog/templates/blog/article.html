@@ -1,0 +1,28 @@
+{% extends 'blog/blog_base.html' %}
+
+{% block blog_content %}
+<div class="article">
+    <h2>{{ article.title }}</h2>
+    <div class="article-content">
+        {% if article.photo %}
+        <div class="photo">
+            <img src="{{ article.photo.url }}" alt="Article photo">
+        </div>
+
+        {% endif %}
+        <article>
+            {% autoescape off %}
+            <p>
+                {{ article.content }}</p>
+            {% endautoescape %}
+
+        </article>
+    </div>
+    <hr>
+    <div class="fot">
+        Category: <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
+        {{ article.created }}
+    </div>
+
+</div>
+{% endblock %}

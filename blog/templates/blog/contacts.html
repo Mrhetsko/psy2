@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!--{% block style %}-->
+<!--    <link rel="stylesheet" href="{% static 'css/style_contacts.css' %}">-->
+<!--{% endblock %}-->
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+<!--<div class="wrapper">-->
+
+
+    <div class="contacts-content">
+
+        <div class="c-head">
+            <img  src="{% static 'img/contacts/psy-room.jpg' %}" alt="">
+        </div>
+
+        <div class="content">
+            <h1>Work schedule, contact, address:</h1>
+            <div class="main-cont">
+                <div class="days">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Days:</th>
+                            <th scope="col">From:</th>
+                            <th scope="col">To:</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>8.00</td>
+                            <td>16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>8.00</td>
+                            <td>16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>8.00</td>
+                            <td>16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>8.00</td>
+                            <td>16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>8.00</td>
+                            <td>16.00</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Free</td>
+                            <td>Free</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="social">
+                    <ul>
+                        <li><img src="{% static 'img/contacts/phone-25.png' %}" alt="mobile"> +421 345 555 444</li>
+                        <li><a href="https://www.instagram.com/dimdim66/" target="_blank"><img
+                                src="{% static 'img/contacts/instagram-25.png' %}" alt="insta">  My direct</a></li>
+                        <li><h5>№432/4 ul. Bratislavska, Bratislava, SK</h5></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="c-map">
+            <h1>We are here</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8635.95160751605!2d17.159619080406014!3d48.15137091492857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8f2cbd70d315%3A0x91405fdf8c0699f8!2sHotel%20Bratislava!5e0!3m2!1suk!2ssk!4v1662726444417!5m2!1suk!2ssk"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+<!--</div>-->
+{% endblock %}
+

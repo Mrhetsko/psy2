@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.blog-container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    gap: 2%;
+    /*position: relative;*/
+    /*width: 100vw;*/
+}
+
+.side-list {
+    border: 1px solid gray;
+    width: 20vw;
+    height: 100vh;
+    /*position: sticky;*/
+    /*top: 0;*/
+}
+
+.blog-main {
+    border: 1px solid gray;
+    width: 75vw;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    }
+
+.card {
+    margin:1.2em;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.article {
+    margin: 1em 1em 1em;
+}
+
+.article img {
+    width: auto;
+    height: 250px;
+    float: left;
+    margin: 0 1em 0 0;
+}
+
+.article p {
+    /*margin: 0 1em 1em;*/
+}
+
+
+/*contacts page*/
+
+.contacts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100vw;
+}
+.c-head{
+    display: flex;
+    justify-content: center;
+}
+
+.c-head img {
+    width: 1300px;
+}
+
+.content {
+    margin: 2em;
+}
+
+.main-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.days, .social {
+    width: 40%;
+}
+
+.social ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+}
+
+.c-map {
+    margin: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

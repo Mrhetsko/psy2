@@ -1,0 +1,15 @@
+{% load blog_template %}
+
+<div class="side-list">
+    <ul class="list-group">
+        <a href="{% url 'blog' %}">
+            <li class="list-group-item" aria-current="true">All</li>
+        </a>
+        {% for category in categories %}
+        <a href="{{ category.get_absolute_url }}">
+            <li class="list-group-item" aria-current="true">{{ category.title }}</li>
+        </a>
+        {% endfor %}
+
+    </ul>
+</div>

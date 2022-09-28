@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load blog_template %}
+
+{% block content %}
+
+<div class="blog-container">
+    <div class="side-list">
+        {% include 'inc/_sidebar.html' %}
+    </div>
+
+    <div class="blog-main">
+        {% block blog_content %}
+
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

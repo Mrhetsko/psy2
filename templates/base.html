@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Title</title>
+</head>
+
+<body>
+<header>
+    {% include 'inc/_navbar.html' %}
+</header>
+<main>
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'inc/_footer.html' %}
+</main>
+{% block script %}{% endblock %}
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
