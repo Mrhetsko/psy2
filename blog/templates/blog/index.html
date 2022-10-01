@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+
 {% block content %}
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -10,8 +15,8 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item">
-        <img src="{% static 'img/Slide2.jpg' %}" height="100%" width="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Slide2"><rect width="100%" height="100%" fill="#777"></rect></img>
+      <div class="carousel-item container-fluid">
+        <img src="{% static 'img/Slide2.jpg' %}"  height="100%" width="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Slide2"><rect width="100%" height="100%" fill="#777"></rect></img>
 
         <div class="container">
           <div class="carousel-caption text-start">

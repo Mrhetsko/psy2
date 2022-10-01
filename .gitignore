@@ -1,9 +1,12 @@
 # Django #
 
 
+#_psy/settings.py
 _psy/local_settings.py
 _psy/prod_settings.py
-_psy/settings.py
+_psy/conf/gunicorn.conf.py
+_psy/conf/psy.conf
+
 
 
 ckeditor/

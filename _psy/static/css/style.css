@@ -6,23 +6,30 @@
 .blog-container{
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: auto;
     gap: 2%;
     /*position: relative;*/
     /*width: 100vw;*/
 }
 
 .side-list {
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     width: 20vw;
-    height: 100vh;
+    height: fit-content;
+    position: sticky;
+    top: 56px;
     /*position: sticky;*/
     /*top: 0;*/
 }
 
+.side-list a {
+    text-decoration: none;
+}
+
 .blog-main {
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     width: 75vw;
+    height: auto;
 }
 
 .main-container {
@@ -99,24 +106,55 @@
     margin: 2em;
 }
 
+.col-md-3 {
+    text-align: center;
+}
 
+.card-body a {
+    color: black;
+    text-decoration: none;
+}
 
+.card-body a:hover {
+    text-decoration: underline;
+}
 
+.col-md-3 img {
+    object-fit: cover;
+    max-height: 300px;
+}
 
+/*certificates*/
 
+.certificates {
+    margin: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.certificate-item {
+    margin: 1em;
+    width: 70%;
+}
 
+@media screen and (max-width: 1082px) {
+    .blog-container {
+        /*background: red;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .side-list, .blog-main {
+        width: 95%;
+    }
+    .side-list a {
+        text-align: center;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    .card {
+        flex-direction: column;
+    }
+}

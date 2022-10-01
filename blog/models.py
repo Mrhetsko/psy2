@@ -11,6 +11,10 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('category', kwargs={'category_id': self.pk})
 
+    class Meta:
+        verbose_name = 'Категорія'
+        verbose_name_plural = 'Категорії'
+
 
 class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name='Назва')

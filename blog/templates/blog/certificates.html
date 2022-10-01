@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="certificates">
+    <h2>Certificates: </h2>
+    <div class="certificate-item">
+        <img src="{% static 'img/certificates/sert1.jpg' %}" class="img-fluid" alt="Responsive image">
+        <h4>This is my first certificate</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem blanditiis dicta doloremque expedita illo in laborum maxime, officiis quae quasi reprehenderit repudiandae similique sunt totam velit vitae voluptate voluptatibus!</p>
+        <hr>
+    </div>
+
+    <div class="certificate-item">
+        <img src="{% static 'img/certificates/sert2.jpg' %}" class="img-fluid" alt="Responsive image">
+        <h4>This is my first certificate</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem blanditiis dicta doloremque expedita illo in laborum maxime, officiis quae quasi reprehenderit repudiandae similique sunt totam velit vitae voluptate voluptatibus!</p>
+        <hr>
+    </div>
+
+    <div class="certificate-item">
+        <img src="{% static 'img/certificates/sert3.jpg' %}" class="img-fluid" alt="Responsive image">
+        <h4>This is my first certificate</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem blanditiis dicta doloremque expedita illo in laborum maxime, officiis quae quasi reprehenderit repudiandae similique sunt totam velit vitae voluptate voluptatibus!</p>
+        <hr>
+    </div>
+</div>
+{% endblock %}

@@ -1,5 +1,9 @@
 {% extends 'blog/blog_base.html' %}
 
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
 {% block blog_content %}
 <div class="article">
     <h2>{{ article.title }}</h2>

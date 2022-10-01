@@ -1,8 +1,8 @@
 {% load blog_template %}
 
-<div class="side-list">
+
     <ul class="list-group">
-        <a href="{% url 'blog' %}">
+        <a class="toggle" href="{% url 'blog' %}">
             <li class="list-group-item" aria-current="true">All</li>
         </a>
         {% for category in categories %}
@@ -12,4 +12,3 @@
         {% endfor %}
 
     </ul>
-</div>

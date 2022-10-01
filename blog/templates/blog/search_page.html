@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="table">
+    <table class="table table-striped table-hover">
+        {% if articles %}
+        {% for article in articles %}
+        <tr>
+            <td>
+                Name:<a href="{{ article.get_absolute_url }}"> {{ article.title }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

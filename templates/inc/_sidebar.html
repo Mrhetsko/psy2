@@ -1,4 +1,6 @@
 {% load blog_template %}
+{% load cache %}
 
-
+{% cache 30 sidebar %}
     {% show_all_categories %}
+{% endcache %}

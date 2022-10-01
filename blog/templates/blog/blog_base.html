@@ -2,9 +2,12 @@
 {% load static %}
 {% load blog_template %}
 
+{% block title %}
+{% endblock %}
+
 {% block content %}
 
-<div class="blog-container">
+<div class="blog-container ">
     <div class="side-list">
         {% include 'inc/_sidebar.html' %}
     </div>
@@ -16,6 +19,10 @@
     </div>
 </div>
 {% endblock %}
+
+
+
+
 
 {% block script %}
 <script src="{% static 'js/main.js' %}"></script>
