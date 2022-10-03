@@ -13,8 +13,11 @@
     <div class="card mb-3" style="">
         <div class="row g-0">
             <div class="col-md-3">
-                <img src="{{ article.photo.url }}"
-                     class="img-fluid rounded-start" alt="article">
+                {% if article.photo %}
+                <img src="{{ article.photo.url }}" class="img-fluid rounded-start" alt="article">
+                {% else %}
+                <p>no foto</p>
+                {% endif %}
             </div>
             <div class="col-md-9">
                 <div class="card-body">
@@ -26,7 +29,7 @@
                     <hr>
                     <div class="foot">
                         <div class="cat">
-                            Category: <a href="{{ article.categoty.get_absolule_url }}"> {{ article.category }}</a>
+                            Category: <a href="{{ article.category.get_absolute_url }}"> {{ article.category }}</a>
                         </div>
                         <div class="created">
                             <h6>{{ article.created|timesince }} ago.</h6>
@@ -53,7 +56,7 @@
             {% endif %}
             {% for p in page_obj.paginator.page_range %}
 
-            {% if page_obj.number == p %}
+            {% if pages.number == p %}
                 <li class="page-item active" aria-current="page">
                     <a class="page-link" href="?page={{ p }}">{{ p }}</a>
                 </li>
@@ -65,7 +68,7 @@
 
 
             {% endfor %}
-            {% if page_obj.has_next %}
+            {% if pages.has_next %}
 
             <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Next</a></li>
             {% endif %}

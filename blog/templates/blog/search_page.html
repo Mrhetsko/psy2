@@ -18,6 +18,9 @@
             </td>
         </tr>
         {% endfor %}
+        {% else %}
+        <h2 class="featurette-heading fw-normal lh-1">Ops... Seems like that is no result for "{{ q }}"</h2>
+        {% endif %}
     </table>
 </div>
 
