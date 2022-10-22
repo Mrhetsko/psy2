@@ -57,13 +57,13 @@
             {% for p in page_obj.paginator.page_range %}
 
             {% if pages.number == p %}
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="?page={{ p }}">{{ p }}</a>
-                </li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+            </li>
             {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ p }}">{{ p }}</a>
-                </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+            </li>
             {% endif %}
 
 

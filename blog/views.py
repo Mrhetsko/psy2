@@ -2,6 +2,7 @@ from django.db.models import F, Q
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.views.decorators.cache import cache_page
+from django.views import generic
 # from django.views.generic import TemplateView, ListView
 
 from . models import Category, Article
@@ -16,18 +17,33 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 
-@cache_page(60)
-def blog(request):
-    title = 'Blog'
-    articles = Article.objects.filter(is_published=True)
-    paginator = Paginator(articles, 3)
-    page_number = request.GET.get('page', 1)
-    page_obj = paginator.get_page(page_number)
-    context = {
-        'title': title,
-        'page_obj': page_obj,
-    }
-    return render(request, 'blog/blog.html', context)
+# @cache_page(60)
+# def blog(request):
+#     title = 'Blog'
+#     articles = Article.objects.filter(is_published=True)
+#     paginator = Paginator(articles, 3)
+#     page_number = request.GET.get('page', 1)
+#     page_obj = paginator.get_page(page_number)
+#     context = {
+#         'title': title,
+#         'page_obj': page_obj,
+#     }
+#     return render(request, 'blog/blog.html', context)
+
+
+class blog(generic.ListView):
+    model = Article
+    template_name = "blog/blog.html"
+    paginate_by = 4
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        context['title'] = 'Blog'
+        return context
+    
+    def get_queryset(self):
+        return Article.objects.filter(is_published=True)
 
 
 @cache_page(60)
@@ -55,6 +71,10 @@ def get_article(request, article_id):
     }
     return render(request, 'blog/article.html', context)
 
+
+# class ViewArticle(generic.DetailView):
+#     model = Article
+    
 
 @cache_page(60 * 2)
 def about(request):
