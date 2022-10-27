@@ -8,7 +8,7 @@ from django.views import generic
 from . models import Category, Article
 
 
-@cache_page(60 * 2)
+# @cache_page(60 * 2)
 def index(request):
     title = 'Hlavni stranka'
     context = {
@@ -18,50 +18,35 @@ def index(request):
 
 
 # @cache_page(60)
-# def blog(request):
-#     title = 'Blog'
-#     articles = Article.objects.filter(is_published=True)
-#     paginator = Paginator(articles, 3)
-#     page_number = request.GET.get('page', 1)
-#     page_obj = paginator.get_page(page_number)
-#     context = {
-#         'title': title,
-#         'page_obj': page_obj,
-#     }
-#     return render(request, 'blog/blog.html', context)
-
-
-class blog(generic.ListView):
-    model = Article
-    template_name = "blog/blog.html"
-    paginate_by = 4
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        
-        context['title'] = 'Blog'
-        return context
-    
-    def get_queryset(self):
-        return Article.objects.filter(is_published=True)
-
-
-@cache_page(60)
-def get_category(request, category_id):
-    category = get_object_or_404(Category, id=category_id)
-    articles = Article.objects.filter(category=category,
-                                      is_published=True,
-                                      )
+def blog(request):
+    title = 'Blog'
+    articles = Article.objects.filter(is_published=True).select_related()
+    paginator = Paginator(articles, 3)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
     context = {
-        'category': category,
+        'title': title,
+        'page_obj': page_obj,
+    }
+    return render(request, 'blog/blog.html', context)
+
+
+# @cache_page(60)
+def get_category(request, category_id):
+    # category = Category.objects.raw('SELECT * FROM category')
+    articles = Article.objects.filter(category=category_id,
+                                      is_published=True).select_related('category')
+    context = {
+        # 'category': category,
         'articles': articles,
     }
     return render(request, 'blog/category.html', context)
 
 
-@cache_page(60)
+# @cache_page(60)
 def get_article(request, article_id):
-    article = get_object_or_404(Article, id=article_id,
+    article = get_object_or_404(Article.objects.select_related(),
+                                id=article_id,
                                 is_published=True,
                                 )
     article.views = F('views') + 1
@@ -76,13 +61,13 @@ def get_article(request, article_id):
 #     model = Article
     
 
-@cache_page(60 * 2)
+# @cache_page(60 * 2)
 def about(request):
     title = 'O Mne'
     return render(request, 'blog/about.html', {'title': title})
 
 
-@cache_page(60 * 2)
+# @cache_page(60 * 2)
 def contacts(request):
     title = 'Kontakty'
     return render(request, 'blog/contacts.html', {'title': title})

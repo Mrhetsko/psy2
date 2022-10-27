@@ -15,7 +15,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'ckeditor_uploader',
-    # 'debug_toolbar',
+    'debug_toolbar',
 ]
 
 
@@ -27,7 +27,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 # debug toolbar setting
-#     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -158,6 +158,9 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+INTERNAL_IPS = [
+     "127.0.0.1",
+]
 
 try:
     from . local_settings import *
